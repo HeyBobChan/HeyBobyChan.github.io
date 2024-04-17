@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unleash Your Inner Dog Lover</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #333;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ff9900;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .neon-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #ff9900;
+      color: #333;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .neon-button:hover {
+      background-color: #fff;
+      color: #ff9900;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Unleash Your Inner Dog Lover</h1>
+    <img src="D:\\Code\\OIP.jpg" alt="Beautiful Dog" class="animate__animated animate__fadeInUp">
+    <p>Dogs, our faithful companions, have evolved alongside us for millennia. From their wild ancestors to the diverse breeds we cherish today, their genetic journey reflects adaptation, selective breeding, and harmonious coexistence with humans.</p>
+    <p><strong>From Wolves to Breeds:</strong> The gray wolf (Canis lupus) serves as the common ancestor of all dogs. Over time, humans selectively bred wolves, shaping them into the remarkable array of breeds we know today. From tiny Chihuahuas to majestic Great Danes, each breed tells a captivating story of evolution.</p>
+    <a href="breeds.html" class="neon-button animate__animated animate__pulse animate__infinite">Explore Breeds</a>
+  </div>
+
+  <script>
+    // Parallax Scrolling Effect
+    window.addEventListener('scroll', function() {
+      const parallax = document.querySelector('body');
+      let scrollPosition = window.pageYOffset;
+
+      parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+    });
+  </script>
+</body>
+</html>
