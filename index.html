@@ -72,6 +72,16 @@
             color: #ff9900;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
+
+        #chatbot-container {
+            height: 30px;
+            overflow: hidden;
+            transition: height 0.3s ease-in-out;
+        }
+
+        #chatbot-container.expanded {
+            height: 400px; /* Adjust this value to control the expanded height */
+        }
     </style>
 </head>
 <body>
@@ -79,7 +89,9 @@
         <h1>Unleash Your Inner Dog Lover</h1>
         <img src="OIP.jpg" class="animate__animated animate__fadeInUp" alt="A dog">
 
-        <iframe src="https://www.chatbase.co/chatbot-iframe/enjBxFE87xCfuepa5W5M1" title="Chatbot" width="100%" style="height: 700px; border: none;" frameborder="0"></iframe>
+        <div id="chatbot-container">
+            <iframe src="https://www.chatbase.co/chatbot-iframe/enjBxFE87xCfuepa5W5M1" title="Chatbot" width="100%" style="height: 100%; border: none;" frameborder="0"></iframe>
+        </div>
 
         <p>Dogs, our faithful companions, have evolved alongside us for millennia. From their wild ancestors to the diverse breeds we cherish today, their genetic journey reflects adaptation, selective breeding, and harmonious coexistence with humans.</p>
 
@@ -94,6 +106,18 @@
             const parallax = document.querySelector('body');
             let scrollPosition = window.pageYOffset;
             parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+        });
+
+        // Expand Chatbot
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const chatbotIframe = chatbotContainer.querySelector('iframe');
+
+        chatbotIframe.addEventListener('focus', function() {
+            chatbotContainer.classList.add('expanded');
+        });
+
+        chatbotIframe.addEventListener('blur', function() {
+            chatbotContainer.classList.remove('expanded');
         });
     </script>
 </body>
