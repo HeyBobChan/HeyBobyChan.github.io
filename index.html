@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unleash Your Inner Doggo Lover</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
@@ -67,46 +67,25 @@
             transition: all 0.3s ease-in-out;
             cursor: pointer;
         }
-
-        .neon-button:hover {
-            background-color: #fff;
-            color: #ff9900;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        #chatbot-container {
-            width: 300px;
-            height: 360px;
-            overflow: hidden;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: height 0.3s ease-in-out;
-            display: none;
-        }
-
-        #chatbot-container.expanded {
-            height: 600px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Unleash Your Inner Dog Lover</h1>
-        <img src="OIP.jpg" class="animate__animated animate__fadeInUp" alt="A dog">
-        <div class="neon-button" id="show-chatbot">Talk to a dog!</div>
+        <h1>Unleash Your Inner Doggo Lover</h1>
+        <img src="doggo.jpg" alt="Cute Doggo">
+        <p>Discover the joy of doggos with our amazing collection!</p>
+        <button class="neon-button">Talk to a dog!</button>
+    
+        <div class="chatbox">
+            <iframe
+src="https://www.chatbase.co/chatbot-iframe/enjBxFE87xCfuepa5W5M1"
+title="Chatbot"
+width="100%"
+style="height: 100%; min-height: 700px"
+frameborder="0"
+></iframe>
 
-        <div id="chatbot-container">
-            <iframe src="https://www.chatbase.co/chatbot-iframe/enjBxFE87xCfuepa5W5M1" title="Chatbot" width="100%" style="height: 100%; border: none;" frameborder="0"></iframe>
         </div>
-
-        <p>Dogs, our faithful companions, have evolved alongside us for millennia. From their wild ancestors to the diverse breeds we cherish today, their genetic journey reflects adaptation, selective breeding, and harmonious coexistence with humans.</p>
-
-        <p><strong>From Wolves to Breeds:</strong> The gray wolf (Canis lupus) serves as the common ancestor of all dogs. Over a long time, humans selectively bred wolves, shaping them into the remarkable array of breeds we know today. From tiny Chihuahuas to majestic Great Danes, each breed tells a captivating story of evolution.</p>
-
-        <a href="https://www.akc.org/dog-breeds/" class="neon-button animate__animated animate__pulse animate__infinite">Explore Breeds</a>
     </div>
-
-    <script>
-        // Parallax Scrolling Effect
-        window.addEventLi
+</body>
+</html>
