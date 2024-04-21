@@ -27,7 +27,7 @@
         <p><strong>From Wolves to Breeds:</strong> The gray wolf (Canis lupus) serves as the common ancestor of all dogs. Over time, humans selectively bred wolves, shaping them into the remarkable array of breeds we know today. From tiny Chihuahuas to majestic Great Danes, each breed tells a captivating story of evolution.</p>
         <a id="chatbot-toggle" class="neon-button animate__animated animate__pulse animate__infinite">Talk to a dog!</a>
         <div id="chatbot-container">
-            <iframe id="chatbot-iframe" src="https://app.chatbit.co/iframe/e2a9c843-1b1e-4b6c-aab1-d6067d3d04dd" width="100%" height="100%" frameborder="0"></iframe>
+            <iframe src="https://app.chatbit.co/iframe/e2a9c843-1b1e-4b6c-aab1-d6067d3d04dd" width="100%" height="100%" frameborder="0"></iframe>
         </div>
     </div>
     <script>
@@ -38,4 +38,9 @@
         });
         const chatbotToggle = document.getElementById('chatbot-toggle');
         const chatbotContainer = document.getElementById('chatbot-container');
-        const chatbotIframe = document.getElementById('chat
+        chatbotToggle.addEventListener('click', function() {
+            chatbotContainer.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
