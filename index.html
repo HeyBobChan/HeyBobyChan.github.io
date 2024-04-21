@@ -76,13 +76,13 @@
 
         #chatbot-container {
             width: 300px;
-            height: 360px; /* Increased initial height to twice the previous height */
+            height: 360px;
             overflow: hidden;
             margin: 20px auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             transition: height 0.3s ease-in-out;
-            display: none; /* Initially hidden */
+            display: none;
         }
 
         #chatbot-container.expanded {
@@ -94,12 +94,11 @@
     <div class="container">
         <h1>Unleash Your Inner Dog Lover</h1>
         <img src="OIP.jpg" class="animate__animated animate__fadeInUp" alt="A dog">
+        <div class="neon-button" id="show-chatbot">Talk to a dog!</div>
 
         <div id="chatbot-container">
             <iframe src="https://www.chatbase.co/chatbot-iframe/enjBxFE87xCfuepa5W5M1" title="Chatbot" width="100%" style="height: 100%; border: none;" frameborder="0"></iframe>
         </div>
-
-        <div class="neon-button" id="show-chatbot">Talk to a dog!</div>
 
         <p>Dogs, our faithful companions, have evolved alongside us for millennia. From their wild ancestors to the diverse breeds we cherish today, their genetic journey reflects adaptation, selective breeding, and harmonious coexistence with humans.</p>
 
@@ -110,16 +109,4 @@
 
     <script>
         // Parallax Scrolling Effect
-        window.addEventListener('scroll', function() {
-            const parallax = document.querySelector('body');
-            let scrollPosition = window.pageYOffset;
-            parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-        });
-
-        // Show/Hide Chatbot
-        const chatbotContainer = document.getElementById('chatbot-container');
-        const showChatbotButton = document.getElementById('show-chatbot');
-
-        showChatbotButton.addEventListener('click', function() {
-            chatbotContainer.style.display = 'block';
-            showChatbotB
+        window.addEventLi
