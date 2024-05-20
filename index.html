@@ -10,11 +10,6 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(120deg, #f0f4f8, #d9e2ec, #bcccdc);
             color: #333;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
         header {
             width: 100%;
@@ -22,8 +17,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             border-bottom: 2px solid #5ca4a9;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
         header h1 {
             font-size: 2em;
@@ -37,20 +35,22 @@
         }
         .hero {
             text-align: center;
-            padding: 100px 20px;
+            padding: 150px 20px 100px;
             background: url('https://raw.githubusercontent.com/HeyBobChan/HeyBobyChan.github.io/main/5d020515-35ab-4566-ae5c-9dec47602774.png') no-repeat center center/cover;
             background-blend-mode: overlay;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.7);
         }
         .hero h2 {
             font-size: 3em;
             margin: 0;
             color: #5ca4a9;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .hero p {
             font-size: 1.5em;
             margin: 20px 0 40px;
             color: #333;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
         }
         .hero a {
             padding: 10px 30px;
@@ -59,6 +59,19 @@
             background: #5ca4a9;
             text-decoration: none;
             border-radius: 5px;
+        }
+        .chatbot-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            background: #f0f4f8;
+        }
+        iframe {
+            width: 80%;
+            height: 500px;
+            border: 2px solid #5ca4a9;
+            border-radius: 10px;
         }
         .services {
             display: flex;
@@ -80,20 +93,6 @@
             line-height: 1.5em;
             color: #333;
         }
-        .chatbot-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex: 1;
-            width: 100%;
-        }
-        iframe {
-            width: 80%;
-            height: 60%;
-            min-height: 400px;
-            border: 2px solid #5ca4a9;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
@@ -113,6 +112,13 @@
     <a href="#services">Learn More</a>
 </div>
 
+<section class="chatbot-container">
+    <iframe
+        src="https://app.chatbit.co/iframe/e2a9c843-1b1e-4b6c-aab1-d6067d3d04dd"
+        frameborder="0">
+    </iframe>
+</section>
+
 <section class="services" id="services">
     <div class="service">
         <h3>Custom Chatbots</h3>
@@ -126,13 +132,6 @@
         <h3>ML Models</h3>
         <p>Advanced machine learning models that provide insightful data analysis and predictions.</p>
     </div>
-</section>
-
-<section class="chatbot-container">
-    <iframe
-        src="https://app.chatbit.co/iframe/e2a9c843-1b1e-4b6c-aab1-d6067d3d04dd"
-        frameborder="0">
-    </iframe>
 </section>
 
 </body>
