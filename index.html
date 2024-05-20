@@ -8,8 +8,8 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-            color: white;
+            background: linear-gradient(120deg, #f0f4f8, #d9e2ec, #bcccdc);
+            color: #333;
             overflow-x: hidden;
         }
         header {
@@ -17,15 +17,15 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: rgba(0, 0, 0, 0.7);
-            border-bottom: 2px solid #00c6ff;
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 2px solid #5ca4a9;
         }
         header h1 {
             font-size: 2em;
-            color: #00c6ff;
+            color: #5ca4a9;
         }
         header nav a {
-            color: #00c6ff;
+            color: #5ca4a9;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.1em;
@@ -34,20 +34,24 @@
             text-align: center;
             padding: 100px 20px;
             background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            background-color: rgba(255, 255, 255, 0.5);
         }
         .hero h2 {
             font-size: 3em;
             margin: 0;
+            color: #5ca4a9;
         }
         .hero p {
             font-size: 1.5em;
             margin: 20px 0 40px;
+            color: #333;
         }
         .hero a {
             padding: 10px 30px;
             font-size: 1.2em;
             color: white;
-            background: #00c6ff;
+            background: #5ca4a9;
             text-decoration: none;
             border-radius: 5px;
         }
@@ -55,7 +59,7 @@
             display: flex;
             justify-content: space-around;
             padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(255, 255, 255, 0.9);
         }
         .service {
             width: 30%;
@@ -64,54 +68,26 @@
         .service h3 {
             font-size: 2em;
             margin-bottom: 20px;
-            color: #00c6ff;
+            color: #5ca4a9;
         }
         .service p {
             font-size: 1.1em;
             line-height: 1.5em;
+            color: #333;
         }
-        .chatbot {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid #00c6ff;
+        .chatbot-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            background: #f0f4f8;
+        }
+        iframe {
+            width: 80%;
+            height: 100%;
+            min-height: 700px;
+            border: 2px solid #5ca4a9;
             border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        .chatbot-header {
-            background: #00c6ff;
-            padding: 10px;
-            font-size: 1.2em;
-            color: white;
-        }
-        .chatbot-messages {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-            background: white;
-        }
-        .chatbot-input {
-            display: flex;
-            border-top: 2px solid #00c6ff;
-        }
-        .chatbot-input input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            font-size: 1em;
-        }
-        .chatbot-input button {
-            padding: 10px;
-            background: #00c6ff;
-            border: none;
-            color: white;
-            font-size: 1.2em;
-            cursor: pointer;
         }
     </style>
 </head>
@@ -147,37 +123,12 @@
     </div>
 </section>
 
-<div class="chatbot">
-    <div class="chatbot-header">Chat with us</div>
-    <div class="chatbot-messages" id="chatbot-messages">
-        <!-- Chat messages will appear here -->
-    </div>
-    <div class="chatbot-input">
-        <input type="text" id="chatbot-input" placeholder="Type a message...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
-</div>
-
-<script>
-    function sendMessage() {
-        const input = document.getElementById('chatbot-input');
-        const messages = document.getElementById('chatbot-messages');
-        const message = input.value.trim();
-        if (message) {
-            const messageElem = document.createElement('div');
-            messageElem.textContent = message;
-            messages.appendChild(messageElem);
-            input.value = '';
-            // Simulate bot response
-            setTimeout(() => {
-                const botMessageElem = document.createElement('div');
-                botMessageElem.textContent = 'Bot: Thank you for your message!';
-                messages.appendChild(botMessageElem);
-                messages.scrollTop = messages.scrollHeight;
-            }, 1000);
-        }
-    }
-</script>
+<section class="chatbot-container">
+    <iframe
+        src="https://app.chatbit.co/iframe/e2a9c843-1b1e-4b6c-aab1-d6067d3d04dd"
+        frameborder="0">
+    </iframe>
+</section>
 
 </body>
 </html>
