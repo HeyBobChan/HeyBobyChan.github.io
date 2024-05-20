@@ -3,44 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unleash Your Inner Dog Lover</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>NewReality - AI & ML Solutions</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-        body{font-family:'Poppins',sans-serif;background-color:#333;color:#fff;margin:0;padding:0;overflow-x:hidden}
-        .container{max-width:1200px;margin:0 auto;padding:80px 40px;text-align:center}
-        h1{font-size:48px;font-weight:700;margin-bottom:40px;text-transform:uppercase;letter-spacing:2px;color:#ff9900;text-shadow:2px 2px 4px rgba(0,0,0,0.5)}
-        img{max-width:100%;height:auto;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,0.3);transition:transform 0.3s ease-in-out}
-        img:hover{transform:scale(1.05)}
-        p{font-size:20px;line-height:1.8;margin-bottom:30px;text-shadow:1px 1px 2px rgba(0,0,0,0.3)}
-        .neon-button{display:inline-block;padding:12px 30px;background-color:#ff9900;color:#333;font-weight:700;text-transform:uppercase;letter-spacing:1px;border-radius:30px;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:all 0.3s ease-in-out}
-        .neon-button:hover{background-color:#fff;color:#ff9900;box-shadow:0 8px 20px rgba(0,0,0,0.5)}
-        #chatbot-container{width:300px; height:400px; overflow:hidden;margin:20px auto;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:height 0.3s ease-in-out;display:none}
-        #chatbot-toggle{cursor:pointer}
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 2px solid #00c6ff;
+        }
+        header h1 {
+            font-size: 2em;
+            color: #00c6ff;
+        }
+        header nav a {
+            color: #00c6ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0 40px;
+        }
+        .hero a {
+            padding: 10px 30px;
+            font-size: 1.2em;
+            color: white;
+            background: #00c6ff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .service {
+            width: 30%;
+            text-align: center;
+        }
+        .service h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #00c6ff;
+        }
+        .service p {
+            font-size: 1.1em;
+            line-height: 1.5em;
+        }
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #00c6ff;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .chatbot-header {
+            background: #00c6ff;
+            padding: 10px;
+            font-size: 1.2em;
+            color: white;
+        }
+        .chatbot-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background: white;
+        }
+        .chatbot-input {
+            display: flex;
+            border-top: 2px solid #00c6ff;
+        }
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            font-size: 1em;
+        }
+        .chatbot-input button {
+            padding: 10px;
+            background: #00c6ff;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Unleash Your Inner Dog Lover</h1>
-        <img src="OIP.jpg" class="animate__animated animate__fadeInUp" alt="A dog">
-        <p>Dogs, our faithful companions, have evolved alongside us for millennia. From their wild ancestors to the diverse breeds we cherish today, their genetic journey reflects adaptation, selective breeding, and harmonious coexistence with humans.</p>
-        <p><strong>From Wolves to Breeds:</strong> The gray wolf (Canis lupus) serves as the common ancestor of all dogs. Over time, humans selectively bred wolves, shaping them into the remarkable array of breeds we know today. From tiny Chihuahuas to majestic Great Danes, each breed tells a captivating story of evolution.</p>
-        <a id="chatbot-toggle" class="neon-button animate__animated animate__pulse animate__infinite">Talk to a dog!</a>
-        <div id="chatbot-container">
-            <iframe src="https://app.chatbit.co/iframe/e2a9c843-1b1e-4b6c-aab1-d6067d3d04dd" width="100%" height="100%" frameborder="0"></iframe>
-        </div>
+
+<header>
+    <h1>NewReality</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>Welcome to NewReality</h2>
+    <p>Tailor-made Chatbots and AI/ML Solutions for Your Business</p>
+    <a href="#services">Learn More</a>
+</div>
+
+<section class="services" id="services">
+    <div class="service">
+        <h3>Custom Chatbots</h3>
+        <p>We design chatbots tailored to your business needs to enhance customer engagement.</p>
     </div>
-    <script>
-        window.addEventListener('scroll', function() {
-            const parallax = document.querySelector('body');
-            let scrollPosition = window.pageYOffset;
-            parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-        });
-        const chatbotToggle = document.getElementById('chatbot-toggle');
-        const chatbotContainer = document.getElementById('chatbot-container');
-        chatbotToggle.addEventListener('click', function() {
-            chatbotContainer.style.display = 'block';
-        });
-    </script>
+    <div class="service">
+        <h3>AI Solutions</h3>
+        <p>Innovative AI solutions that transform your business operations and drive growth.</p>
+    </div>
+    <div class="service">
+        <h3>ML Models</h3>
+        <p>Advanced machine learning models that provide insightful data analysis and predictions.</p>
+    </div>
+</section>
+
+<div class="chatbot">
+    <div class="chatbot-header">Chat with us</div>
+    <div class="chatbot-messages" id="chatbot-messages">
+        <!-- Chat messages will appear here -->
+    </div>
+    <div class="chatbot-input">
+        <input type="text" id="chatbot-input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    function sendMessage() {
+        const input = document.getElementById('chatbot-input');
+        const messages = document.getElementById('chatbot-messages');
+        const message = input.value.trim();
+        if (message) {
+            const messageElem = document.createElement('div');
+            messageElem.textContent = message;
+            messages.appendChild(messageElem);
+            input.value = '';
+            // Simulate bot response
+            setTimeout(() => {
+                const botMessageElem = document.createElement('div');
+                botMessageElem.textContent = 'Bot: Thank you for your message!';
+                messages.appendChild(botMessageElem);
+                messages.scrollTop = messages.scrollHeight;
+            }, 1000);
+        }
+    }
+</script>
+
 </body>
 </html>
