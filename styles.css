@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.container {
+    margin-bottom: 20px;
+}
+
+#inputText {
+    width: 80%;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+#outputContainer {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
