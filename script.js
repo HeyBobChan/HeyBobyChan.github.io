@@ -1,25 +1,35 @@
 document.getElementById('processButton').addEventListener('click', () => {
+    // Show loading indicator
+    document.getElementById('loading').style.display = 'block';
+    // Hide previous output
+    document.getElementById('outputContainer').innerHTML = '';
+
     const text = document.getElementById('inputText').value.trim();
     if (!text) {
         alert('Please enter some text or upload a file.');
+        document.getElementById('loading').style.display = 'none';
         return;
     }
 
-    fetch('/.netlify/functions/process', {
+    fetch('https://celadon-salmiakki-9c10f8.netlify.app/.netlify/functions/process', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ input: text })
     })
     .then(response => response.json())
     .then(data => {
+        // Hide loading indicator
+        document.getElementById('loading').style.display = 'none';
         if (data.error) {
             alert('Error: ' + data.error);
         } else {
+            console.log('Data output:', data.output);
             document.getElementById('outputContainer').innerHTML = data.output;
         }
     })
     .catch(error => {
         console.error('Error:', error);
+        document.getElementById('loading').style.display = 'none';
         alert('An error occurred while processing your request.');
     });
 });
