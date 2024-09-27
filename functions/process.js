@@ -63,6 +63,25 @@ exports.handler = async function(event, context) {
         });
         console.log('Assistant run created:', run.id);
 
+        // Wait for the run to complete
+        // Poll the run status until it's finished
+        let runStatus = run.status;
+        while (runStatus !== 'succeeded' && runStatus !== 'failed') {
+            await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
+            const updatedRun = await openai.beta.threads.runs.retrieve(thread.id, run.id);
+            runStatus = updatedRun.status;
+            console.log('Run status:', runStatus);
+        }
+
+        if (runStatus === 'failed') {
+            console.error('Assistant run failed.');
+            return {
+                statusCode: 500,
+                headers,
+                body: JSON.stringify({ error: 'Assistant failed to generate a response.' })
+            };
+        }
+
         // Retrieve Messages from the Thread
         const messages = await openai.beta.threads.messages.list(thread.id);
         console.log('Messages in thread:', messages.data.length);
@@ -79,7 +98,7 @@ exports.handler = async function(event, context) {
         }
 
         const assistantResponse = assistantMessages[assistantMessages.length - 1].content;
-        console.log('Assistant response length:', assistantResponse.length);
+        console.log('Assistant response:', assistantResponse);
 
         console.timeEnd('AssistantResponseTime');
 

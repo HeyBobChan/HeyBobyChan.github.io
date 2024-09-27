@@ -24,7 +24,10 @@ document.getElementById('processButton').addEventListener('click', () => {
             alert('Error: ' + data.error);
         } else {
             console.log('Data output:', data.output);
-            document.getElementById('outputContainer').innerHTML = data.output;
+            // Sanitize the HTML content
+            const sanitizedHTML = DOMPurify.sanitize(data.output);
+            // Render the sanitized HTML
+            document.getElementById('outputContainer').innerHTML = sanitizedHTML;
         }
     })
     .catch(error => {
