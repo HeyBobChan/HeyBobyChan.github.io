@@ -12,7 +12,11 @@ document.getElementById('processButton').addEventListener('click', () => {
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById('outputContainer').innerHTML = data.output;
+        if (data.error) {
+            alert('Error: ' + data.error);
+        } else {
+            document.getElementById('outputContainer').innerHTML = data.output;
+        }
     })
     .catch(error => {
         console.error('Error:', error);

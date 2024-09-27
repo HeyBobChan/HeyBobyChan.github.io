@@ -1,0 +1,12 @@
+{
+    "name": "legal-text-color-coder",
+    "version": "1.0.0",
+    "description": "A web application to color-code legal text using an OpenAI assistant.",
+    "main": "index.js",
+    "scripts": {},
+    "dependencies": {
+      "openai": "^4.0.0",
+      "node-fetch": "^2.6.7"
+    }
+  }
+  
