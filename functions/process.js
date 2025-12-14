@@ -97,19 +97,27 @@ exports.handler = async function(event, context) {
             };
         }
 
-        const assistantResponse = assistantMessages[assistantMessages.length - 1].content;
-        console.log('Assistant response:', assistantResponse);
+        const lastAssistantMessage = assistantMessages[assistantMessages.length - 1];
 
-        console.timeEnd('AssistantResponseTime');
+        if (lastAssistantMessage && lastAssistantMessage.content && lastAssistantMessage.content[0] && lastAssistantMessage.content[0].text) {
+            const assistantResponseContent = lastAssistantMessage.content[0].text.value;
+            console.log('Assistant response:', assistantResponseContent);
 
-        // Ensure assistantResponse is a string
-        const assistantResponseContent = typeof assistantResponse === 'object' ? JSON.stringify(assistantResponse) : assistantResponse;
+            console.timeEnd('AssistantResponseTime');
 
-        return {
-            statusCode: 200,
-            headers,
-            body: JSON.stringify({ output: assistantResponseContent })
-        };
+            return {
+                statusCode: 200,
+                headers,
+                body: JSON.stringify({ output: assistantResponseContent })
+            };
+        } else {
+            console.error('Unexpected assistant response format:', lastAssistantMessage);
+            return {
+                statusCode: 500,
+                headers,
+                body: JSON.stringify({ error: 'Unexpected response format from assistant.' })
+            };
+        }
     } catch (error) {
         console.error('Error:', error);
         return {
